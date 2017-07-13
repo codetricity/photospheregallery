@@ -1,0 +1,121 @@
+<head>
+    <script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+    <script src="three.in.js"></script>
+    <script src="photo-sphere-viewer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Faster+One|Mystery+Quest" rel="stylesheet">
+    <style>
+        body {font-family: 'Mystery Quest', cursive;}
+        h1 {text-align: center; font-family: 'Faster One'; font-size: 40px;}
+        .menu {text-align: center; margin-top: 20px;
+                font-size: 40px;}
+        .menuElement {display: inline-block; padding: 20px;}
+        #portal {
+            margin: auto;
+            width: 50%;
+            height: 50%;
+        }
+        #directions {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>THETA 360 Gallery</h1>
+    <div  id='portal'></div>
+ 
+    <div class="menu">
+        <div class="menuElement" id="image1">
+                 1
+        </div>
+        <div class="menuElement" id="image2">
+             2
+        </div>
+        <div class="menuElement" id="image3">
+             3
+        </div>
+        <div class="menuElement" id="image4">
+             4
+        </div>
+        <div class="menuElement" id="image5">
+             5
+        </div>
+    </div>
+    <div id="directions">
+        mouse over number to change image
+        <br> demo of open source 
+        <a href="https://github.com/JeremyHeleine/Photo-Sphere-Viewer">
+        Photo Sphere Viewer</a> with RICOH THETA images
+        <br>
+        <a href="http://lists.theta360.guide">discussion</a>
+        
+    </div>
+    <script>
+        var image1 = "360img/trees.jpg";
+        var image2 = "360img/drawing.jpg";
+        var image3 = "360img/wall.jpg";
+        var image4 = "360img/bush.jpg";
+        var image5 = "360img/meetup.jpg";
+ 
+        var portal = document.getElementById('portal');
+        var time_anim = 500;
+        var anim_speed = "1rpm";
+
+        var psv = new PhotoSphereViewer({
+            panorama: image1,
+            container: portal,
+            navbar: true,
+            time_anim: time_anim,
+            anim_speed: anim_speed
+        });
+
+        $(document).ready ( () => {
+            $("#image1").mouseover( () => {
+            psv = new PhotoSphereViewer({
+                panorama: image1,
+                container: portal,
+                navbar: true,
+                time_anim: time_anim,
+                anim_speed: anim_speed
+              });
+            });
+            $("#image2").mouseover( () => {
+            psv = new PhotoSphereViewer({
+                panorama: image2,
+                container: portal,
+                navbar: true,
+                time_anim: time_anim,
+                anim_speed: anim_speed
+                });
+            });
+            $("#image3").mouseover( () => {
+            psv = new PhotoSphereViewer({
+                panorama: image3,
+                container: portal,
+                navbar: true,
+                time_anim: time_anim,
+                anim_speed: anim_speed
+                });
+            });
+            $("#image4").mouseover( () => {
+            psv = new PhotoSphereViewer({
+                panorama: image4,
+                container: portal,
+                navbar: true,
+                time_anim: time_anim,
+                anim_speed: anim_speed
+                });
+            });
+            $("#image5").mouseover( () => {
+            psv = new PhotoSphereViewer({
+                panorama: image5,
+                container: portal,
+                navbar: true,
+                time_anim: time_anim,
+                anim_speed: anim_speed
+                });
+            });
+        });
+    </script>
+</body>
